@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "utilisateur" : 2,
+        "partie" : 1,
+        "personnage" : 1
+    },
+    {
+        "id": 2,
+        "utilisateur" : 3,
+        "partie" : 1,
+        "personnage" : 2
+    }
+]

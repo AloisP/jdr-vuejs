@@ -1,0 +1,32 @@
+[
+    {
+        "id" : 1,
+        "nom" : "Mirith",
+        "classe" : "Guerrier",
+        "pv" : 10,
+        "force" : 70,
+        "intelligence" : 65,
+        "esprit" : 30,
+        "initiative" : 40,
+        "equipement" : null,
+        "inventaire" : null,
+        "background" : null,
+        "race" : "Humain",
+        "sexe" : "Homme"
+    },
+    {
+        "id" : 2,
+        "nom" : "Virops",
+        "classe" : "Mage",
+        "pv" : 10,
+        "force" : 40,
+        "intelligence" : 85,
+        "esprit" : 60,
+        "initiative" : 30,
+        "equipement" : null,
+        "inventaire" : null,
+        "background" : null,
+        "race" : "Humain",
+        "sexe" : "Homme"
+    }
+]

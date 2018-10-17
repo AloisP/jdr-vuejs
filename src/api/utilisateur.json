@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "pseudo" : "test",
+        "mail": "test@test.com",
+        "login" : "Testeur",
+        "password" : "test",
+        "avatar" : ""
+    },
+    {
+        "id" : 2,
+        "pseudo" : "Alois",
+        "mail": "Alois@Alois.com",
+        "login" : "Alois",
+        "password" : "test",
+        "avatar" : ""
+    },
+    {
+        "id" : 3,
+        "pseudo" : "Julien",
+        "mail": "Julien@Julien.com",
+        "login" : "Julien",
+        "password" : "test",
+        "avatar" : ""
+    }
+]
