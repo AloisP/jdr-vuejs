@@ -39,7 +39,6 @@
 
 
 <script>
-import axios from 'axios';
 import json from '../../api/utilisateur.json';
 import router from '../../router';
 
