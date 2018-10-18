@@ -8,9 +8,12 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/accueil',
+      path: '/accueil/:id',
       name: 'Accueil',
-      component: Accueil
+      component: Accueil,
+      props: {
+        name:"", mail:""
+      }
     },
     {
       path: '/',
