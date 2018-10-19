@@ -13,19 +13,12 @@
 
             </b-collapse>
         </b-navbar>
-
     </div>
-
 </template>
 
 <script>
 export default {
-  name: 'Navbar',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  name: 'Navbar'
 }
 </script>
 

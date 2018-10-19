@@ -10,17 +10,23 @@
 import Navbar from './Navbar'
 import Sidebar from './sidebar/Sidebar'
 import Content from './Content'
-
 import utilisateurs from '../../api/utilisateur.json'
 
 export default {
   name: 'Accueil',
   data () {
     return {
-      utilisateur : utilisateurs.find(u => {
-        return u.login === 'Alois';
-      })
+      user_id : null,
+      utilisateur : null
     }
+  },
+  created() {
+    this.user_id = this.$route.params.id;
+  },
+  mounted(){
+    this.utilisateur =  utilisateurs.find(u => {
+        return u.id === this.user_id;
+      })
   },
   components: {
       Navbar, Sidebar, Content

@@ -4,7 +4,7 @@
           <img src="@/assets/generic-user.png" class="img-circle" alt="User Image">
         </div>
         <div class="float-left welcome">
-            Bienvenue <br><strong>{{utilisateur.prenom}} Pin</strong>
+            Bienvenue <br><strong>Alois Pin</strong>
         </div>
         {{test}}
     </div>
