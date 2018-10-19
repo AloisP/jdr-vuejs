@@ -20,7 +20,8 @@
     "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.2",
     "vue-form": "^4.10.1",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue2-admin-lte": "^0.4.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

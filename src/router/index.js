@@ -6,6 +6,7 @@ import Connexion from '@/components/connexion/Connexion'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/accueil/:id',
@@ -23,7 +24,7 @@ export default new Router({
     {
       path: '/inscription',
       name: 'Inscription',
-      component: Inscription
+      // component: Inscription
     }
   ]
 })

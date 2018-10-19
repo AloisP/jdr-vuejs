@@ -1,30 +1,21 @@
 <template>
-    <aside class="sidebar bg-dark text-white">
-        <UserPanel v-bind:utilisateur="utilisateur"/>
+    <aside class="main-sidebar">
+        <section class="sidebar" style="height: auto">
+            <UserPanel v-bind:utilisateur="utilisateur"/>
+            <Menu />
+        </section>
     </aside>
 </template>
 
 <script>
 import UserPanel from './UserPanel'
+import Menu from './Menu'
 
 export default {
   name: 'Sidebar',
   props : ["utilisateur"],
   components: {
-      UserPanel
+      UserPanel, Menu
   }
 }
 </script>
-
-<style>
-.sidebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 70px 15px;
-    min-height: 100%;
-    width: 230px;
-    z-index: 810;
-}
-
-</style>
