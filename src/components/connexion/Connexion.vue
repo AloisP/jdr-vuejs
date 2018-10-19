@@ -64,14 +64,13 @@ export default {
                 router.push({name:'Accueil', params: {id: element.id}, props: {name: element.pseudo, mail:element.mail }} );
             }
         });
-    },
-    onReset (evt) {
-      evt.preventDefault();
-
     }
-  },
+  }
 }
+<<<<<<< HEAD
+=======
 //console.log(json);
+>>>>>>> 79152b238e51547dd2c534809574e6d147c95ca3
 </script>
 
 <style>

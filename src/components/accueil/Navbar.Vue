@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <header class="main-header">
         <a href="./accueil" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -22,10 +23,34 @@
             </div>
         </nav>
     </header>
+=======
+    <div>
+        <b-navbar toggleable="md" type="dark" variant="info" class="navbar">
+            <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+            <b-navbar-brand class="brand " href="#">JDR</b-navbar-brand>
+            <b-collapse is-nav id="nav_collapse">
+                <!-- Right aligned nav items -->
+                <b-navbar-nav class="ml-auto">
+                    <b-nav-item href="/">
+                        <font-awesome-icon icon="power-off" />
+                    </b-nav-item>
+                </b-navbar-nav>
+
+            </b-collapse>
+        </b-navbar>
+
+    </div>
+
+>>>>>>> 55a798262564e0b223915cf3d9be4a851a2665a8
 </template>
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
+    }
+  }
 }
 </script>

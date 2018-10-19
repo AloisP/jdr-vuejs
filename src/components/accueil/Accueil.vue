@@ -10,12 +10,14 @@
 import Navbar from './Navbar'
 import Sidebar from './sidebar/Sidebar'
 import Content from './Content'
+
 import utilisateurs from '../../api/utilisateur.json'
 
 export default {
   name: 'Accueil',
   data () {
     return {
+<<<<<<< HEAD
       error : null,
       user_id : null,
       utilisateur : null
@@ -31,6 +33,10 @@ export default {
     getUser() {
       this.utilisateur =  utilisateurs.find(u => {
           return u.id === this.$route.params.id;
+=======
+      utilisateur : utilisateurs.find(u => {
+        return u.login === 'Alois';
+>>>>>>> 55a798262564e0b223915cf3d9be4a851a2665a8
       })
     }
   },
