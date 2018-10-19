@@ -19,6 +19,11 @@ export default new Router({
       path: '/',
       name: 'Connexion',
       component: Connexion
+    },
+    {
+      path: '/inscription',
+      name: 'Inscription',
+      component: Inscription
     }
   ]
 })
