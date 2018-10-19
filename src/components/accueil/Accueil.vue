@@ -1,31 +1,29 @@
 <template>
     <div>
        <Navbar />
-       <b-row>
-           <b-col cols="4">
-                <Sidebar />
-           </b-col>
-           <b-col cols="8">
-                <Content />
-            </b-col>
-        </b-row>
+       <Sidebar  v-bind:utilisateur="utilisateur"/>
+       <Content  />
     </div>
 </template>
 
-
 <script>
 import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import Sidebar from './sidebar/Sidebar'
+import Content from './Content'
+
+import utilisateurs from '../../api/utilisateur.json'
 
 export default {
   name: 'Accueil',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      utilisateur : utilisateurs.find(u => {
+        return u.login === 'Alois';
+      })
     }
   },
-  components : {
-      Navbar, Sidebar
+  components: {
+      Navbar, Sidebar, Content
   }
 }
 </script>
