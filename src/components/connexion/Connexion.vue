@@ -58,7 +58,7 @@ export default {
   methods: {
     onSubmit (evt) {
         evt.preventDefault();
-        console.log(this.form.email);
+        // console.log(this.form.email);
         json.forEach(element => {
             if (element.mail == this.form.email && element.password == this.form.password){
                 router.push({name:'Accueil', params: {id: element.id}, props: {name: element.pseudo, mail:element.mail }} );
@@ -67,6 +67,10 @@ export default {
     }
   }
 }
+<<<<<<< HEAD
+=======
+//console.log(json);
+>>>>>>> 79152b238e51547dd2c534809574e6d147c95ca3
 </script>
 
 <style>
