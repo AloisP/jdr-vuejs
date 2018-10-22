@@ -1,19 +1,13 @@
 <template>
     <div class="user-panel">
-        <div class="float-left image">
+        <div class="pull-left image">
           <img src="@/assets/generic-user.png" class="img-circle" alt="User Image">
         </div>
-<<<<<<< HEAD
-        <div class="float-left info">Bienvenue <br><strong>{{utilisateur.pseudo}}</strong></div>
-=======
-        <div class="float-left welcome">
-            Bienvenue <br><strong>{{utilisateur.prenom}} Pin</strong>
+        <div class="pull-left info">
+            Bienvenue <br><strong>{{utilisateur !== null ?  utilisateur.login : ""}} </strong>
         </div>
-        {{test}}
->>>>>>> 55a798262564e0b223915cf3d9be4a851a2665a8
     </div>
 </template>
-
 
 <script> 
 export default {
@@ -21,8 +15,3 @@ export default {
   props : ["utilisateur"]
 }
 </script>
-
-<style>
-
-</style>
-

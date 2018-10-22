@@ -5,5 +5,19 @@
         "nb_joueur" : 2,
         "ouvert" : true, 
         "titre" : "Le retour du dragon blanc"
+    },
+    {
+        "id" : 2,
+        "mj" : 2,
+        "nb_joueur" : 4,
+        "ouvert" : true, 
+        "titre" : "Swim or sink"
+    },
+    {
+        "id" : 3,
+        "mj" : 2,
+        "nb_joueur" : 3,
+        "ouvert" : true, 
+        "titre" : "Magic is back"
     }
 ]

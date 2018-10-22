@@ -1,7 +1,21 @@
 <template>
     <ul class="sidebar-menu tree">
-        <li class="header">Menu</li>
-
+        <li class="header"><i class="fa fa-home"></i> Menu</li>
+        <li>
+            <a href="#">
+                <i class="fa fa-gamepad"></i> <span>Nouvelle partie</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-users"></i> <span>Contact</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-info-circle"></i> <span>Mes informations</span>
+            </a>
+        </li>
     </ul>
 </template>
 

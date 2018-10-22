@@ -25,7 +25,7 @@
               </b-form-input>
             </b-form-group>
             <b-button type="submit" variant="primary">Se connecter</b-button>
-            <b-button type="reset" variant="success">Inscription</b-button>
+            <b-button type="button" variant="success" v-on:click="goInscription">Inscription</b-button>
           </b-form>
         </b-col>
         <b-col></b-col>
@@ -64,13 +64,16 @@ export default {
                 router.push({name:'Accueil', params: {id: element.id}, props: {name: element.pseudo, mail:element.mail }} );
             }
         });
+    },
+    onReset (evt) {
+      evt.preventDefault();
+    },
+    goInscription(){
+      router.push({name:'Inscription'});
     }
   }
 }
-<<<<<<< HEAD
-=======
 //console.log(json);
->>>>>>> 79152b238e51547dd2c534809574e6d147c95ca3
 </script>
 
 <style>
