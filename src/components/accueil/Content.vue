@@ -31,17 +31,17 @@
                                                     <footer>Description par <cite title="Source Title">{{utilisateur.pseudo}}</cite></footer>
                                                 </blockquote>
                                             </div>
-                                            <div class="box-footer text-right">
+                                            <div class="box-footer text-right" v-if="partie.joueurs.length">
                                                 <ul class="users-list clearfix">
-                                                    <li v-for="joueur in partie.joueurs" :key="joueur.id">
+                                                    <li v-for="joueur in partie.joueurs" :key="joueur.id" v-bind:style="{width : (100/partie.joueurs.length) + '%'}">
                                                         <img src="@/assets/generic-user.png" alt="User Image" style="width :50px">
                                                         <a class="users-list-name" href="#">{{joueur.pseudo}}</a>
                                                         <span class="users-list-date"><i class="fa fa-circle text-success"></i> En ligne </span>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <div class="box-footer text-right">
-                                                <button class="btn btn-success" v-bind:class="[!partie.ouvert ? 'hidden' :  '']"  >Lancer</button>
+                                            <div class="box-footer text-right" v-if="partie.ouvert">
+                                                <button class="btn btn-success" v-bind:class="[!partie.ouvert ? 'hidden' :  '']" v-on:click="lancerPartie(partie.id)" >Lancer</button>
                                             </div>
                                         </div>
                                     </div>
@@ -76,21 +76,23 @@
 import parties from '../../api/partie.json';
 import parties_joueurs from '../../api/partie_joueur.json'
 import utilisateurs from '../../api/utilisateur.json'
+import router from '../../router';
+
 
 export default {
   name: 'Content',
-  props : ["utilisateur"],
   data(){
       return {
         parties_mj : [],
-        parties_joueur : []
+        parties_joueur : [],
+        utilisateur : JSON.parse(sessionStorage.getItem('utilisateur'))
       }
   },
-  mounted(){
-      this.getPartiesMj()
+  created(){
+      this.getPartiesMj(this.current_user)
   },
-  methods: {
-      getPartiesMj(){
+  methods : {
+      getPartiesMj() {
         parties.find(p => {
             if(p.mj === this.utilisateur.id ){
                 var partie = p;
@@ -109,6 +111,9 @@ export default {
                 this.parties_mj.push(p);
             }
          })
+      },
+      lancerPartie(partie){
+          router.push({name:'Partie', params: {id: partie}})
       }
   }
 }

@@ -12,6 +12,10 @@
 <script> 
 export default {
   name: 'UserPanel',
-  props : ["utilisateur"]
+  data(){
+      return {
+          utilisateur : JSON.parse(sessionStorage.getItem('utilisateur'))
+      }
+  }
 }
 </script>

@@ -38,5 +38,13 @@
         "login" : "Eza",
         "password" : "test",
         "avatar" : ""
+    },
+    {
+        "id" : 6,
+        "pseudo" : "tre",
+        "mail": "tre@tre.com",
+        "login" : "Tre",
+        "password" : "test",
+        "avatar" : ""
     }
 ]

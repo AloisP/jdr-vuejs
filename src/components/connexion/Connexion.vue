@@ -61,7 +61,8 @@ export default {
         // console.log(this.form.email);
         json.forEach(element => {
             if (element.mail == this.form.email && element.password == this.form.password){
-                router.push({name:'Accueil', params: {id: element.id}, props: {name: element.pseudo, mail:element.mail }} );
+                sessionStorage.setItem('utilisateur', JSON.stringify(element))
+                router.push({name:'Accueil',params : {id : element.id}, props: {name: element.pseudo, mail:element.mail }} );
             }
         });
     },

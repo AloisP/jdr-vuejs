@@ -8,20 +8,22 @@
 </template>
 
 <script>
-import Navbar from './Navbar'
-import Sidebar from './sidebar/Sidebar'
+import Navbar from '@/components/accueil/Navbar'
 import Content from './Content'
-import Footer from './Footer'
+import Sidebar from './Sidebar'
+import Footer from '@/components/accueil/Footer'
 
 export default {
   name: 'Accueil',
-  data(){
-      return {
-          utilisateur : JSON.parse(sessionStorage.getItem('utilisateur'))
-      }
+  data () {
+    return {
+      error : null,
+      user_id : null
+    }
   },
   components: {
-      Navbar, Sidebar, Content, Footer
+      Navbar, Content, Footer, Sidebar
   }
 }
 </script>
+
