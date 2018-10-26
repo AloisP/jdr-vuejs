@@ -1,7 +1,7 @@
 [
     {
         "id" : 1,
-        "pseudo" : "test",
+        "pseudo" : "Testeur",
         "mail": "test@test.com",
         "login" : "Testeur",
         "password" : "test",
@@ -20,6 +20,22 @@
         "pseudo" : "Julien",
         "mail": "Julien@Julien.com",
         "login" : "Julien",
+        "password" : "test",
+        "avatar" : ""
+    },
+    {
+        "id" : 4,
+        "pseudo" : "aze",
+        "mail": "aze@aze.com",
+        "login" : "Aze",
+        "password" : "test",
+        "avatar" : ""
+    },
+    {
+        "id" : 5,
+        "pseudo" : "eza",
+        "mail": "eza@eza.com",
+        "login" : "Eza",
         "password" : "test",
         "avatar" : ""
     }

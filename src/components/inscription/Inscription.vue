@@ -4,7 +4,8 @@
             <b-form @submit="onSubmit" v-if="show">
                 <b-form-group id="pseudo"
                             label="Pseudo"
-                            label-for="pseudo">
+                            label-for="pseudo"
+                            :invalid-feedback="invalidPseudo">
                     <b-form-input id="pseudo"
                                     type="text"
                                     v-model="form.pseudo"
@@ -13,7 +14,8 @@
                 </b-form-group>
                 <b-form-group id="mail"
                             label="Email"
-                            label-for="mail">
+                            label-for="mail"
+                            :invalid-feedback="invalidMail">
                     <b-form-input id="mail"
                                     type="email"
                                     required
@@ -52,11 +54,26 @@
 </template>
 
 <script>
-import json from '../../api/utilisateur.json';
+import utilisateurs from '../../api/utilisateur.json';
+// import Datastore from 'nedb';
+
+// var userdb = new Datastore({filename : '../../db/utilisateur.db', autoload: true});
 
 export default {
   name:'Inscription',
   computed: {
+    invalidPseudo(){
+      var pseudos = utilisateurs.filter(u => {
+        return (u.pseudo.toLowerCase() == this.form.pseudo.toLowerCase());
+      })
+      return pseudos.length > 0 ?  "Ce pseudo est déja utilisé" : "";
+    },
+    invalidMail(){
+      var mails = utilisateurs.filter(u => {
+        return (u.mail.toLowerCase() == this.form.mail.toLowerCase());
+      })
+      return mails.length > 0 ?  "Cette adresse mail est déja utilisée" : "";
+    },
     statePassword () {
       return this.form.password.length >= 8 ? true : false
     },
@@ -96,12 +113,39 @@ export default {
             checked: []
       },
       show: true,
-      info: json
+      info: utilisateurs
     }
   },
   methods: {
     onSubmit (evt) {
         evt.preventDefault();
+        var user = {
+          "pseudo" : this.form.pseudo,
+          "mail" : this.form.mail,
+          "login" : this.form.pseudo,
+          "password" : this.form.password
+        }
+        this.insertUser(user);
+    },
+    // findUser(db, opt){
+    //   return new Promise(function(resolve, reject) {
+    //     db.findOne(opt, function(err, doc) {
+    //       if (err) {
+    //         reject(err)
+    //       } else {
+    //         resolve(doc)
+    //       }
+    //     })
+    //   })
+    // },
+    insertUser(user){
+      var file = '../../api/utilisateur.json';
+
+      // userdb.insert(user, function(err, newUser){
+      //   console.log(err);
+      //   console.log(newUser);
+      // })
+
     }
   }
 }
@@ -110,5 +154,8 @@ export default {
 <style>
   #form-inscription{
     margin-top: 10rem;
+  }
+  .invalid-feedback{
+    color : red
   }
 </style>

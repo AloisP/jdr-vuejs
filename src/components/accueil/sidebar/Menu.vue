@@ -16,6 +16,11 @@
                 <i class="fa fa-info-circle"></i> <span>Mes informations</span>
             </a>
         </li>
+        <li>
+            <a href="/">
+                <i class="fa fa-power-off"></i> <span>Déconnexion</span>
+            </a>
+        </li>
     </ul>
 </template>
 

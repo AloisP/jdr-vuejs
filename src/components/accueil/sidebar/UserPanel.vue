@@ -4,7 +4,7 @@
           <img src="@/assets/generic-user.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-            Bienvenue <br><strong>{{utilisateur !== null ?  utilisateur.login : ""}} </strong>
+            Bienvenue <br><strong>{{utilisateur !== null ?  utilisateur.pseudo : ""}} </strong>
         </div>
     </div>
 </template>

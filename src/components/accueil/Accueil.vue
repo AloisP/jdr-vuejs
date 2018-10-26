@@ -1,8 +1,8 @@
 <template>
-    <div class="wrapper" style="height: auto;">
+    <div class="wrapper">
        <Navbar />
        <Sidebar  v-bind:utilisateur="utilisateur" />
-       <Content  />
+       <Content  v-bind:utilisateur="utilisateur" />
        <Footer />
     </div>
 </template>
