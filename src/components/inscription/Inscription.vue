@@ -55,6 +55,7 @@
 
 <script>
 import utilisateurs from '../../api/utilisateur.json';
+const fb = require('../../firebaseConfig.js');
 // import Datastore from 'nedb';
 
 // var userdb = new Datastore({filename : '../../db/utilisateur.db', autoload: true});
@@ -126,6 +127,13 @@ export default {
           "password" : this.form.password
         }
         this.insertUser(user);
+
+        fb.userCollection.add({
+          avatar: '',
+          mail: this.form.mail,
+          password: this.form.password,
+          pseudo: this.form.pseudo
+        })
     },
     // findUser(db, opt){
     //   return new Promise(function(resolve, reject) {
