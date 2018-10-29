@@ -64,7 +64,8 @@ export default {
             console.log(doc.data().mail + ' -- ' + doc.data().password);
             if(this.form.email == doc.data().mail && this.form.password == doc.data().password)
             {
-              console.log('ok ' + this.form.email);
+              sessionStorage.setItem('utilisateur', JSON.stringify(doc.data()))
+              router.push({name:'Accueil',params : {id : doc.data().id}, props: {name: doc.data().pseudo, mail:doc.data().mail }} );
             }
           });
         })
