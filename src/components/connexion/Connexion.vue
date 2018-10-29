@@ -76,7 +76,10 @@ export default {
         fb.db.ref('user').once('value', function(snapshot){
           snapshot.forEach(function (childSnap){
               if(childSnap.val().mail == mail && childSnap.val().password == password){
-                sessionStorage.setItem('utilisateur', JSON.stringify(childSnap.val()))
+                sessionStorage.setItem('idUser',childSnap.val().id);
+                sessionStorage.setItem('pseudoUser',childSnap.val().pseudo);
+                sessionStorage.setItem('mailUser',childSnap.val().mail);
+                sessionStorage.setItem('avatarUser',childSnap.val().avatar);
                 router.push({name:'Accueil',params : {id : childSnap.val().id}, props: {name: childSnap.val().pseudo, mail:childSnap.val().mail }} );
                 return false;
               }
