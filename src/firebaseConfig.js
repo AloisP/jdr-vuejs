@@ -11,22 +11,12 @@ var config = {
   };
 
 firebase.initializeApp(config);
-const db = firebase.firestore()
+const db = firebase.database()
 const auth = firebase.auth()
-const settings = {
-    timestampsInSnapshots: true
-}
-
-db.settings({
-    timestampsInSnapshots: true
-  });
-
-const userCollection = db.collection('user')
 
 auth.signInWithEmailAndPassword('admin@admin.com','admin1');
 
 export {
     db,
-    auth,
-    userCollection
+    auth
 }

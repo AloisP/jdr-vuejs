@@ -59,6 +59,7 @@ export default {
   methods: {
     onSubmit (evt) {
         evt.preventDefault();
+        /*
         fb.userCollection.get().then((snapshot) =>{
           snapshot.docs.forEach(doc => {
             console.log(doc.data().mail + ' -- ' + doc.data().password);
@@ -66,8 +67,20 @@ export default {
             {
               sessionStorage.setItem('utilisateur', JSON.stringify(doc.data()))
               router.push({name:'Accueil',params : {id : doc.data().id}, props: {name: doc.data().pseudo, mail:doc.data().mail }} );
+              return false;
             }
           });
+        })*/
+        const mail = this.form.email;
+        const password = this.form.password;
+        fb.db.ref('user').once('value', function(snapshot){
+          snapshot.forEach(function (childSnap){
+              if(childSnap.val().mail == mail && childSnap.val().password == password){
+                sessionStorage.setItem('utilisateur', JSON.stringify(childSnap.val()))
+                router.push({name:'Accueil',params : {id : childSnap.val().id}, props: {name: childSnap.val().pseudo, mail:childSnap.val().mail }} );
+                return false;
+              }
+          })
         })
     },
     onReset (evt) {
