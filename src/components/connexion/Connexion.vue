@@ -41,6 +41,7 @@
 <script>
 import json from '../../api/utilisateur.json';
 import router from '../../router';
+const fb = require('../../firebaseConfig.js')
 
 export default {
   name:'Connexion',
@@ -58,13 +59,15 @@ export default {
   methods: {
     onSubmit (evt) {
         evt.preventDefault();
-        // console.log(this.form.email);
-        json.forEach(element => {
-            if (element.mail == this.form.email && element.password == this.form.password){
-                sessionStorage.setItem('utilisateur', JSON.stringify(element))
-                router.push({name:'Accueil',params : {id : element.id}, props: {name: element.pseudo, mail:element.mail }} );
+        fb.userCollection.get().then((snapshot) =>{
+          snapshot.docs.forEach(doc => {
+            console.log(doc.data().mail + ' -- ' + doc.data().password);
+            if(this.form.email == doc.data().mail && this.form.password == doc.data().password)
+            {
+              console.log('ok ' + this.form.email);
             }
-        });
+          });
+        })
     },
     onReset (evt) {
       evt.preventDefault();
