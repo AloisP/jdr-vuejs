@@ -31,15 +31,11 @@
         <b-col></b-col>
       </b-row>
     </b-container>
-    <b-container>
-        <div v-for="d in info" :key="d.id">{{d}}</div>
-    </b-container>
   </div>
 </template>
 
 
 <script>
-import json from '../../api/utilisateur.json';
 import router from '../../router';
 const fb = require('../../firebaseConfig.js')
 
@@ -53,24 +49,11 @@ export default {
         checked: []
       },
       show: true,
-      info: json
     }
   },
   methods: {
     onSubmit (evt) {
         evt.preventDefault();
-        /*
-        fb.userCollection.get().then((snapshot) =>{
-          snapshot.docs.forEach(doc => {
-            console.log(doc.data().mail + ' -- ' + doc.data().password);
-            if(this.form.email == doc.data().mail && this.form.password == doc.data().password)
-            {
-              sessionStorage.setItem('utilisateur', JSON.stringify(doc.data()))
-              router.push({name:'Accueil',params : {id : doc.data().id}, props: {name: doc.data().pseudo, mail:doc.data().mail }} );
-              return false;
-            }
-          });
-        })*/
         const mail = this.form.email;
         const password = this.form.password;
         fb.db.ref('user').once('value', function(snapshot){
@@ -80,7 +63,10 @@ export default {
                 sessionStorage.setItem('pseudoUser',childSnap.val().pseudo);
                 sessionStorage.setItem('mailUser',childSnap.val().mail);
                 sessionStorage.setItem('avatarUser',childSnap.val().avatar);
-                router.push({name:'Accueil',params : {id : childSnap.val().id}, props: {name: childSnap.val().pseudo, mail:childSnap.val().mail }} );
+                fb.db.ref('user/' + childSnap.key).update({
+                  online: true
+                })
+               router.push({name:'Accueil',params : {id : childSnap.val().id}, props: {name: childSnap.val().pseudo, mail:childSnap.val().mail }} );
                 return false;
               }
           })
@@ -94,7 +80,6 @@ export default {
     }
   }
 }
-//console.log(json);
 </script>
 
 <style>

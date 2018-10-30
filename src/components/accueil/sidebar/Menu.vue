@@ -25,10 +25,23 @@
 </template>
 
 <script> 
+const fb = require('../../../firebaseConfig.js')
 export default {
     name : "Menu",
+    data(){
+      return {
+        idUser : parseInt(sessionStorage.getItem('idUser')),
+      }
+  },
     methods : {
         deconnexion(){
+            fb.db.ref('user').orderByChild('id').equalTo(this.idUser).once("value",function(datas){
+                datas.forEach(function (childSnap){
+                    fb.db.ref('user/' + childSnap.key).update({
+                        online: false
+                    })
+                })
+            })
             sessionStorage.clear();
             this.$router.push('/')
         }
