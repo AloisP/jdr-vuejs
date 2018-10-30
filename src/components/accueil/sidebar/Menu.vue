@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-            <a href="/">
+            <a v-on:click="deconnexion">
                 <i class="fa fa-power-off"></i> <span>Déconnexion</span>
             </a>
         </li>
@@ -26,6 +26,12 @@
 
 <script> 
 export default {
-    name : "Menu"
+    name : "Menu",
+    methods : {
+        deconnexion(){
+            sessionStorage.clear();
+            this.$router.push('/')
+        }
+    }
 }
 </script>
