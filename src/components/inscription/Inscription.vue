@@ -55,10 +55,8 @@
 
 <script>
 import utilisateurs from '../../api/utilisateur.json';
+import router from '../../router';
 const fb = require('../../firebaseConfig.js');
-// import Datastore from 'nedb';
-
-// var userdb = new Datastore({filename : '../../db/utilisateur.db', autoload: true});
 
 export default {
   name:'Inscription',
@@ -120,40 +118,33 @@ export default {
   methods: {
     onSubmit (evt) {
         evt.preventDefault();
-        var user = {
-          "pseudo" : this.form.pseudo,
-          "mail" : this.form.mail,
-          "login" : this.form.pseudo,
-          "password" : this.form.password
-        }
-        this.insertUser(user);
 
-        fb.userCollection.add({
-          avatar: '',
-          mail: this.form.mail,
-          password: this.form.password,
-          pseudo: this.form.pseudo
-        })
-    },
-    // findUser(db, opt){
-    //   return new Promise(function(resolve, reject) {
-    //     db.findOne(opt, function(err, doc) {
-    //       if (err) {
-    //         reject(err)
-    //       } else {
-    //         resolve(doc)
-    //       }
-    //     })
-    //   })
-    // },
-    insertUser(user){
-      var file = '../../api/utilisateur.json';
+        const pseudo = this.form.pseudo
+        const mail = this.form.mail
+        const password = this.form.password
 
-      // userdb.insert(user, function(err, newUser){
-      //   console.log(err);
-      //   console.log(newUser);
-      // })
+        fb.db.ref('user').limitToLast(1).once('value', function(snapshot){
+          snapshot.forEach(function (data){
+              fb.db.ref('user/' + data.val().id).set({
+                  avatar: "",
+                  id:  data.val().id+1,
+                  mail: mail,
+                  online: false,
+                  password: password,
+                  pseudo: pseudo
+                }, function(error){
+                  if(error){
+                    console.log(error);
+                  }
+                  else{
+                    console.log('ok');
+                  }
+                })
+                router.push({name:'Connexion'} );
+                return false;
 
+          })
+        })        
     }
   }
 }
