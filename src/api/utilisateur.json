@@ -1,50 +1,46 @@
-[
-    {
-        "id" : 1,
-        "pseudo" : "Testeur",
-        "mail": "test@test.com",
-        "login" : "Testeur",
-        "password" : "test",
-        "avatar" : ""
-    },
-    {
-        "id" : 2,
-        "pseudo" : "Alois",
-        "mail": "Alois@Alois.com",
-        "login" : "Alois",
-        "password" : "test",
-        "avatar" : ""
-    },
-    {
-        "id" : 3,
-        "pseudo" : "Julien",
-        "mail": "Julien@Julien.com",
-        "login" : "Julien",
-        "password" : "test",
-        "avatar" : ""
-    },
-    {
-        "id" : 4,
-        "pseudo" : "aze",
-        "mail": "aze@aze.com",
-        "login" : "Aze",
-        "password" : "test",
-        "avatar" : ""
-    },
-    {
-        "id" : 5,
-        "pseudo" : "eza",
-        "mail": "eza@eza.com",
-        "login" : "Eza",
-        "password" : "test",
-        "avatar" : ""
-    },
-    {
-        "id" : 6,
-        "pseudo" : "tre",
-        "mail": "tre@tre.com",
-        "login" : "Tre",
-        "password" : "test",
-        "avatar" : ""
-    }
-]
+{
+    "user" : [ {
+      "avatar" : "",
+      "id" : 1,
+      "mail" : "test@test.com",
+      "password" : "test",
+      "pseudo" : "Testeur",
+      "online" : false
+    }, {
+      "avatar" : "",
+      "id" : 2,
+      "mail" : "Alois@Alois.com",
+      "password" : "test",
+      "pseudo" : "Alois",
+      "online" : false
+    }, {
+      "avatar" : "",
+      "id" : 3,
+      "mail" : "Julien@Julien.com",
+      "password" : "test",
+      "pseudo" : "Julien",
+      "online" : false
+    }, {
+      "avatar" : "",
+      "id" : 4,
+      "mail" : "aze@aze.com",
+      "password" : "test",
+      "pseudo" : "aze",
+      "online" : false
+    }, {
+      "avatar" : "",
+      "id" : 5,
+      "mail" : "eza@eza.com",
+      "password" : "test",
+      "pseudo" : "eza",
+      "online" : false
+    }, {
+      "avatar" : "",
+      "id" : 6,
+      "mail" : "tre@tre.com",
+      "password" : "test",
+      "pseudo" : "tre",
+      "online" : false
+    } ]
+  }
+  

@@ -1,26 +1,29 @@
-[
-    {
-        "id" : 1,
-        "mj" : 1,
-        "nb_joueur" : 2,
-        "ouvert" : true, 
-        "titre" : "Le retour du dragon blanc",
-        "description": "Il était une fois, dans un monde lointain et reculé de tout, un dragon blanc. Ce dragon était albinos et démoniaque."
-    },
-    {
-        "id" : 2,
-        "mj" : 2,
-        "nb_joueur" : 4,
-        "ouvert" : true, 
-        "titre" : "Swim or sink",
-        "description": "Nage ou crève ! Ce fut les paroles du premier diciple de Témort, maître des enfers."
-    },
-    {
-        "id" : 3,
-        "mj" : 2,
-        "nb_joueur" : 3,
-        "ouvert" : false, 
-        "titre" : "Magic is back",
-        "description": "Après 1000 ans, la magie est enfin revenue sur le royaume de Tetraki. Plusieurs événements sont liés à celle-ci. Le combat pour lutter contre la fin du monde commence."
-    }
-]
+{
+    "game" :
+    [
+        {
+            "id" : 1,
+            "mj" : 1,
+            "nb_joueur" : 2,
+            "ouvert" : true, 
+            "titre" : "Le retour du dragon blanc",
+            "description": "Il était une fois, dans un monde lointain et reculé de tout, un dragon blanc. Ce dragon était albinos et démoniaque."
+        },
+        {
+            "id" : 2,
+            "mj" : 2,
+            "nb_joueur" : 4,
+            "ouvert" : true, 
+            "titre" : "Swim or sink",
+            "description": "Nage ou crève ! Ce fut les paroles du premier diciple de Témort, maître des enfers."
+        },
+        {
+            "id" : 3,
+            "mj" : 2,
+            "nb_joueur" : 3,
+            "ouvert" : false, 
+            "titre" : "Magic is back",
+            "description": "Après 1000 ans, la magie est enfin revenue sur le royaume de Tetraki. Plusieurs événements sont liés à celle-ci. Le combat pour lutter contre la fin du monde commence."
+        }
+    ]
+}

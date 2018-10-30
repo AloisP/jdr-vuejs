@@ -1,10 +1,10 @@
 <template>
     <div class="user-panel">
         <div class="pull-left image">
-          <img src="@/assets/generic-user.png" class="img-circle" alt="User Image">
+          <img :src="require('@/assets/'+avatarUser)" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-            Bienvenue <br><strong>{{utilisateur !== null ?  utilisateur.pseudo : ""}} </strong>
+            <p>Bienvenue </p><p>{{pseudoUser}} </p>
         </div>
     </div>
 </template>
@@ -14,7 +14,8 @@ export default {
   name: 'UserPanel',
   data(){
       return {
-          utilisateur : JSON.parse(sessionStorage.getItem('utilisateur'))
+          pseudoUser : sessionStorage.getItem('pseudoUser'),
+          avatarUser : sessionStorage.getItem('avatarUser') ? sessionStorage.getItem('avatarUser') : "generic-user.png"
       }
   }
 }
