@@ -40,5 +40,25 @@ export default {
 .direct-chat-messages{
   height: 600px ;
 }
+
+#de {
+    width: 100px;
+    height: 100px;
+    font-size: 25px;
+}
+#content-de{
+    height: 250px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spin-on{
+    animation : fa-spin 0.1s infinite linear;
+}
+
+#wrapper-partie{
+    width: calc(100% - 300px)
+}
 </style>
 
