@@ -12,9 +12,9 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <router-link to="/informations">
                 <i class="fa fa-info-circle"></i> <span>Mes informations</span>
-            </a>
+            </router-link>
         </li>
         <li>
             <a v-on:click="deconnexion">

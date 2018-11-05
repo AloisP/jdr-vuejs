@@ -60,7 +60,7 @@
                         </div>        
                         <div class="box-body with-border">
                             <br>
-                            <div  class="text-center" v-if="!parties_joueur.length">Vous avez rejoin aucune partie</div>
+                            <div  class="text-center" v-if="!parties_joueur.length">Vous avez rejoint aucune partie</div>
                             <div class="row">
                                 <!-- <div v-for="partie in parties_mj" class="col-3">
                                     <div class="box" v-bind:class="[partie.ouvert ? 'box-success' :  'box-danger']">

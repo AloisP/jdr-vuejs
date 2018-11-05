@@ -66,7 +66,7 @@ export default {
                 fb.db.ref('user/' + childSnap.key).update({
                   online: true
                 })
-               router.push({name:'Accueil',params : {id : childSnap.val().id}, props: {name: childSnap.val().pseudo, mail:childSnap.val().mail }} );
+               router.push({name:'Accueil',params : {id : childSnap.val().id}} );
                 return false;
               }
           })

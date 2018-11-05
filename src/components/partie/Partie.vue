@@ -14,7 +14,7 @@ import Footer from '@/components/accueil/Footer'
 import Sidebar from './right-sidebar/Sidebar'
 
 export default {
-  name: 'Accueil',
+  name: 'Partie',
   data () {
     return {
       error : null,

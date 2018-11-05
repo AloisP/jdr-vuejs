@@ -4,6 +4,7 @@ import Accueil from '@/components/accueil/Accueil'
 import Connexion from '@/components/connexion/Connexion'
 import Inscription from '@/components/inscription/Inscription'
 import Partie from '@/components/partie/Partie'
+import Informations from '@/components/informations/Informations'
 
 Vue.use(Router)
 
@@ -13,9 +14,6 @@ export default new Router({
       path: '/accueil/:id',
       name: 'Accueil',
       component: Accueil,
-      props: {
-        name:"", mail:""
-      }
     },
     {
       path: '/',
@@ -31,6 +29,11 @@ export default new Router({
       path: '/partie/:id',
       name: 'Partie',
        component: Partie
+    },
+    {
+      path: '/informations',
+      name: 'Informations',
+       component: Informations
     }
   ]
 })
