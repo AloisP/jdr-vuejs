@@ -1,192 +1,99 @@
 <template>
     <div class="box box-info direct-chat direct-chat-info">
-        <!-- /.box-header -->
         <div class="box-body">
-            <!-- Conversations are loaded here -->
             <div class="direct-chat-messages">
-            <!-- Message. Default to the left -->
-            <div class="direct-chat-msg">
-                <div class="direct-chat-info clearfix">
-                <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
-                </div>
-                <!-- /.direct-chat-info -->
-                <img class="direct-chat-img" src="@/assets/generic-user.png" alt="message user image">
-                <!-- /.direct-chat-img -->
-                <div class="direct-chat-text">
-                Is this template really for free? That's unbelievable!
-                </div>
-                <!-- /.direct-chat-text -->
-            </div>
-            <!-- /.direct-chat-msg -->
-
-            <!-- Message to the right -->
-            <div class="direct-chat-msg right">
-                <div class="direct-chat-info clearfix">
-                <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
-                </div>
-                <!-- /.direct-chat-info -->
-                <img class="direct-chat-img" src="@/assets/generic-user.png" alt="message user image">
-                <!-- /.direct-chat-img -->
-                <div class="direct-chat-text">
-                You better believe it!
-                </div>
-                <!-- /.direct-chat-text -->
-            </div>
-            <!-- /.direct-chat-msg -->
-
-            <!-- Message. Default to the left -->
-            <div class="direct-chat-msg">
-                <div class="direct-chat-info clearfix">
-                <span class="direct-chat-name pull-left">Alexander Pierce</span>
-                <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
-                </div>
-                <!-- /.direct-chat-info -->
-                <img class="direct-chat-img" src="@/assets/generic-user.png" alt="message user image">
-                <!-- /.direct-chat-img -->
-                <div class="direct-chat-text">
-                Working with AdminLTE on a great new app! Wanna join?
-                </div>
-                <!-- /.direct-chat-text -->
-            </div>
-            <!-- /.direct-chat-msg -->
-
-            <!-- Message to the right -->
-            <div class="direct-chat-msg right">
-                <div class="direct-chat-info clearfix">
-                <span class="direct-chat-name pull-right">Sarah Bullock</span>
-                <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
-                </div>
-                <!-- /.direct-chat-info -->
-                <img class="direct-chat-img" src="@/assets/generic-user.png" alt="message user image">
-                <!-- /.direct-chat-img -->
-                <div class="direct-chat-text">
-                I would love to.
-                </div>
-                <!-- /.direct-chat-text -->
-            </div>
-            <!-- /.direct-chat-msg -->
-
-            </div>
-            <!--/.direct-chat-messages-->
-
-            <!-- Contacts are loaded here -->
-            <div class="direct-chat-contacts">
-            <ul class="contacts-list">
-                <li>
-                <a href="#">
-                    <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Image">
-
-                    <div class="contacts-list-info">
-                        <span class="contacts-list-name">
-                            Count Dracula
-                            <small class="contacts-list-date pull-right">2/28/2015</small>
+                <div v-for="message in chat" v-bind:key="message.id" class="direct-chat-msg" :class="[message.utilisateur === idUser ? 'right' : '']">
+                    <div class="direct-chat-info clearfix">
+                        <span class="direct-chat-name" :class="[message.utilisateur === idUser ? 'pull-right' : ' pull-left']" >
+                            {{message.utilisateur === idUser ? 'Vous' : message.pseudoUser}}
                         </span>
-                    <span class="contacts-list-msg">How have you been? I was...</span>
+                        <span class="direct-chat-timestamp" :class="[message.utilisateur === idUser ? 'pull-left' : ' pull-right']">{{message.date}}</span>
                     </div>
-                    <!-- /.contacts-list-info -->
-                </a>
-                </li>
-                <!-- End Contact Item -->
-                <li>
-                <a href="#">
-                    <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Image">
-
-                    <div class="contacts-list-info">
-                        <span class="contacts-list-name">
-                            Sarah Doe
-                            <small class="contacts-list-date pull-right">2/23/2015</small>
-                        </span>
-                    <span class="contacts-list-msg">I will be waiting for...</span>
+                    <img class="direct-chat-img" :src="require('@/assets/' + message.avatarUser)" alt="message user image">
+                    <div class="direct-chat-text">
+                        {{message.texte}}
                     </div>
-                    <!-- /.contacts-list-info -->
-                </a>
-                </li>
-                <!-- End Contact Item -->
-                <li>
-                <a href="#">
-                    <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Image">
-
-                    <div class="contacts-list-info">
-                        <span class="contacts-list-name">
-                            Nadia Jolie
-                            <small class="contacts-list-date pull-right">2/20/2015</small>
-                        </span>
-                    <span class="contacts-list-msg">I'll call you back at...</span>
-                    </div>
-                    <!-- /.contacts-list-info -->
-                </a>
-                </li>
-                <!-- End Contact Item -->
-                <li>
-                <a href="#">
-                    <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Image">
-
-                    <div class="contacts-list-info">
-                        <span class="contacts-list-name">
-                            Nora S. Vans
-                            <small class="contacts-list-date pull-right">2/10/2015</small>
-                        </span>
-                    <span class="contacts-list-msg">Where is your new...</span>
-                    </div>
-                    <!-- /.contacts-list-info -->
-                </a>
-                </li>
-                <!-- End Contact Item -->
-                <li>
-                <a href="#">
-                    <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Image">
-
-                    <div class="contacts-list-info">
-                        <span class="contacts-list-name">
-                            John K.
-                            <small class="contacts-list-date pull-right">1/27/2015</small>
-                        </span>
-                    <span class="contacts-list-msg">Can I take a look at...</span>
-                    </div>
-                    <!-- /.contacts-list-info -->
-                </a>
-                </li>
-                <!-- End Contact Item -->
-                <li>
-                <a href="#">
-                    <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Image">
-
-                    <div class="contacts-list-info">
-                        <span class="contacts-list-name">
-                            Kenneth M.
-                            <small class="contacts-list-date pull-right">1/4/2015</small>
-                        </span>
-                    <span class="contacts-list-msg">Never mind I found...</span>
-                    </div>
-                    <!-- /.contacts-list-info -->
-                </a>
-                </li>
-                <!-- End Contact Item -->
-            </ul>
-            <!-- /.contatcts-list -->
+                </div>
             </div>
-            <!-- /.direct-chat-pane -->
         </div>
-        <!-- /.box-body -->
         <div class="box-footer">
-            <form action="#" method="post">
-            <div class="input-group">
-                <input type="text" name="message" placeholder="Type Message ..." class="form-control">
-                <span class="input-group-btn">
-                    <button type="button" class="btn btn-info btn-flat">Send</button>
+            <form action="#" method="post" @submit="sendMessage">
+                <div class="input-group">
+                    <input type="text" name="message" placeholder="Saisissez votre message..." class="form-control" v-model="form.message">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-info btn-flat" >Envoyer</button>
                     </span>
-            </div>
+                </div>
             </form>
         </div>
-    <!-- /.box-footer-->
     </div>
 </template>
 
 <script>
+const fb = require('../../../firebaseConfig.js')
+var moment = require('moment');
 export default {
-    name: "Chat",
+    name: "Chat",  
+    data(){
+      return {
+          idUser : parseInt(sessionStorage.getItem('idUser')),
+          idPartie : parseInt(sessionStorage.getItem('idPartie')),
+          chat : [],
+          form : {
+            message : ""
+          }
+      }
+  },
+  created() {
+      this.getChat();
+  },
+  methods : {
+      getChat() {
+        var messages = [];
+        // Recherche des messages du Chat
+        fb.db.ref('chat').orderByChild('partie').equalTo(this.idPartie).on("value",function(datas){
+            var message = null;
+            datas.forEach(data => {
+                message = data.val()
+                // Recherche des informations des joueurs
+                fb.db.ref('user').orderByChild('id').equalTo(message.utilisateur).on("value",function(datas){
+                    var user = null;
+                    datas.forEach(data => {
+                        user = data.val()
+                        message.pseudoUser = user.pseudo;
+                        message.avatarUser = user.avatar !== "" ? user.avatar : 'generic-user.png' ;
+                    })
+                })
+                messages.push(message);
+            })
+        })
+        this.chat = messages;
+      },
+      sendMessage(evt){
+        evt.preventDefault();
+        var partie = this.idPartie;
+        var texte = this.form.message;
+        var utilisateur = this.idUser;
+        var date = moment().locale('fr').format('lll'); 
+        if(this.texte != ""){
+            fb.db.ref('chat').limitToLast(1).once('value', function(snapshot){
+                snapshot.forEach(function (data){
+                    fb.db.ref('chat/' + data.val().id).set({
+                        id:  data.val().id+1,
+                        partie: partie,
+                        texte: texte,
+                        utilisateur: utilisateur,
+                        date: date
+                        }, function(error){
+                            if(error){ console.log(error); } else{  console.log('ok');}
+                    })
+                    return false;
+                })
+            })        
+            this.form.message ="";
+        }
+      }
+  }
     
 }
 </script>

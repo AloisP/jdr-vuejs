@@ -114,7 +114,6 @@ export default {
                             var user = null;
                             datas.forEach(data => {
                                 user = data.val()
-                                // Recherche des informations des joueurs
                                 joueurs.push(user);
                             })
                         })
@@ -138,17 +137,16 @@ export default {
         console.log(joueurs)
         return joueurs;
       },
-      findJoueur: function(idUser){
-        // fb.db.ref('user').orderByChild('mj').equalTo(this.idUser).once("value",function(datas){
-        //     var joueur = null;
-        //     datas.forEach(data => {
-        //         partie = data.val()
-        //         console.log(partie)
-        //     })
-        // })
-      },
       lancerPartie(partie){
-          router.push({name:'Partie', params: {id: partie}})
+        sessionStorage.setItem('idPartie', partie);
+        fb.db.ref('game').orderByChild('id').equalTo(partie).once("value",function(datas){
+            datas.forEach(function(data){
+                var partie = data.val();
+                sessionStorage.setItem('idMj', partie.mj);
+                sessionStorage.setItem('titrePartie', partie.titre)
+            })
+        })
+        router.push({name:'Partie'})
       }
   }
 }
