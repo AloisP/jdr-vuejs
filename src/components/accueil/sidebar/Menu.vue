@@ -1,6 +1,11 @@
 <template>
     <ul class="sidebar-menu tree">
-        <li class="header"><i class="fa fa-home"></i> Menu</li>
+        <li class="header"><i class="fa fa-bars"></i> Menu</li>
+        <li>
+            <router-link to="/accueil">
+                <i class="fa fa-home"></i> <span>Accueil</span>
+            </router-link>
+        </li>
         <li>
             <a href="#">
                 <i class="fa fa-gamepad"></i> <span>Nouvelle partie</span>
