@@ -26,7 +26,7 @@ export default new Router({
        component: Inscription
     },
     {
-      path: '/partie/:id',
+      path: '/partie',
       name: 'Partie',
        component: Partie
     },

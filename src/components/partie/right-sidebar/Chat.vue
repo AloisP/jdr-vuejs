@@ -9,7 +9,8 @@
                         </span>
                         <span class="direct-chat-timestamp" :class="[message.utilisateur === idUser ? 'pull-left' : ' pull-right']">{{message.date}}</span>
                     </div>
-                    <img class="direct-chat-img" :src="require('@/assets/' + message.avatarUser)" alt="message user image">
+                    <!-- <img class="direct-chat-img" :src="require('@/assets/' + message.avatarUser)" alt="message user image"> -->
+                    <img class="direct-chat-img" :src="require('@/assets/generic-user.png')" alt="message user image">
                     <div class="direct-chat-text">
                         {{message.texte}}
                     </div>
