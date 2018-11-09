@@ -26,32 +26,101 @@
                         <div class="box-header with-border"><h3 class="box-title"> Personnages </h3></div>
                         <div class="box-body">
                             <div class="row">
-                                <div class="col-md-1" style="display: flex;">
-                                    <i class="fa fa-angle-left" style="margin: auto;"></i>
+                                <div class="col-md-1">
+                                    <i class="fa fa-angle-left"></i>
                                 </div>
                                 <div class="col-md-10">
-                                    <div >
+                                    <div v-for="(joueur,index) in joueurs" v-bind:key="joueur.id" v-bind:class="{'hidden' : !estMj && joueur.id != currentUser.idUser}">
+                                        <div class="row">
+                                            <div class="col-md-12 text-center">
+                                                <label>Test</label> (Julien) {{index}}
+                                            </div>
+                                        </div>
+                                        <hr>
                                         <div class="row">
                                             <div class="col-md-6 text-center">
                                                 <img src="@/assets/personnage_classe/guerrier-humain-femme.jpg" style="height : 250px;width:100%"/>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="row">
-                                                    <div class="col-md-5">
-                                                        <label>Nom :</label> 
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        Test 
+                                                    <div class="col-md-12">
+                                                        <label>Race :</label> Humain 
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-5">
-                                                        <label>Joueur :</label> 
-                                                    </div>
-                                                    <div class="col-md-7">
-                                                        Test 
+                                                    <div class="col-md-12">
+                                                        <label>Sexe :</label> Femme 
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label>Classe :</label> Guerrier 
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <label>PV :</label> 10 (+0)
+                                                    </div>
+                                                    <div class="col-md-4 text-right">
+                                                        <span class="text-gray"><i class="fa fa-plus-circle"></i></span>
+                                                        <span class=""><i class="fa fa-minus-circle"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <label>Force :</label> 70 (+0)
+                                                    </div>
+                                                    <div class="col-md-4 text-right">
+                                                        <span class="text-gray"><i class="fa fa-plus-circle"></i></span>
+                                                        <span class="text-gray"><i class="fa fa-minus-circle"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <label>Intel. :</label> 30 (+0)
+                                                    </div>
+                                                    <div class="col-md-4 text-right">
+                                                        <span class="text-gray"><i class="fa fa-plus-circle"></i></span>
+                                                        <span class="text-gray"><i class="fa fa-minus-circle"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <label>Esprit :</label> 30 (+0)
+                                                    </div>
+                                                    <div class="col-md-4 text-right">
+                                                        <span class="text-gray"><i class="fa fa-plus-circle"></i></span>
+                                                        <span class="text-gray"><i class="fa fa-minus-circle"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-8">
+                                                        <label>Init. :</label> 30 (+0)
+                                                    </div>
+                                                    <div class="col-md-4 text-right">
+                                                        <span class="text-gray"><i class="fa fa-plus-circle"></i></span>
+                                                        <span class="text-gray"><i class="fa fa-minus-circle"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="nav-tabs-custom">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Equipement</a></li>
+                                                    <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Inventaire</a></li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="tab_1">
+                                                        Vide
+                                                    </div>
+                                                    <!-- /.tab-pane -->
+                                                    <div class="tab-pane" id="tab_2">
+                                                        Vide
+                                                    </div>
+                                                </div>
+                                                <!-- /.tab-content -->
                                             </div>
                                         </div>
                                     </div>
@@ -200,6 +269,12 @@ export default {
             })
             console.log(joueurs);
             this.joueurs = joueurs;
+        },
+        pageSuivante() {
+
+        },
+        pagePrecedente(){
+            
         }
   }
 }
