@@ -1,5 +1,7 @@
 <template>
     <div id="content-de">
+        <div class="row">
+        </div>
         <button id="de" class="btn btn-danger btn-lg" :class="{'spin-on': estLance}" :disabled=estLance v-on:click="lancerDe()">{{valeur_des}}</button>
     </div>
 </template>
