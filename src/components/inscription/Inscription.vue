@@ -61,17 +61,17 @@ const fb = require('../../firebaseConfig.js');
 export default {
   name:'Inscription',
   computed: {
-    invalidPseudo(){
+    invalidPseudo(){/*
       var pseudos = utilisateurs.filter(u => {
         return (u.pseudo.toLowerCase() == this.form.pseudo.toLowerCase());
       })
-      return pseudos.length > 0 ?  "Ce pseudo est déja utilisé" : "";
+      return pseudos.length > 0 ?  "Ce pseudo est déja utilisé" : "";*/
     },
-    invalidMail(){
+    invalidMail(){/*
       var mails = utilisateurs.filter(u => {
         return (u.mail.toLowerCase() == this.form.mail.toLowerCase());
       })
-      return mails.length > 0 ?  "Cette adresse mail est déja utilisée" : "";
+      return mails.length > 0 ?  "Cette adresse mail est déja utilisée" : "";*/
     },
     statePassword () {
       return this.form.password.length >= 8 ? true : false

@@ -8,6 +8,9 @@
           <p>Vos informations ont bien été modifiées</p>
         </b-alert>
         <b-container>
+            <h1>
+                <i class="fa fa-info-circle"></i> Mes informations
+            </h1>
             <b-form @submit="onSubmit" v-if="show">
               <h3 class="titre-page">Modifications des informations de mon compte</h3>
                 <b-form-group id="pseudo"
@@ -19,6 +22,7 @@
                                     required>
                     </b-form-input>
                 </b-form-group>
+
                 <b-form-group id="mail"
                             label="Email"
                             label-for="mail">
@@ -28,14 +32,12 @@
                                     v-model="form.mail">
                     </b-form-input>
                 </b-form-group>
-                <b-form-group id="avatar"
-                            label="Avatar"
-                            label-for="avatar">
-                    <b-form-input id="avatar"
-                                    type="text"
-                                    v-model="form.avatar">
-                    </b-form-input>
-                </b-form-group>
+
+                <b-form-file v-model="file" :state="Boolean(file)" plain></b-form-file>
+                <div style="margin: 1rem 0">
+                  Avatar actuel : {{form.avatar}}
+                </div>
+
                 <b-button type="submit" variant="primary">Modifier mes informations</b-button>
             </b-form>
         </b-container>
@@ -116,6 +118,7 @@ export default {
           pseudo: sessionStorage.getItem('pseudoUser'),
           avatar: sessionStorage.getItem('avatarUser'),
           mail: sessionStorage.getItem('mailUser'),
+          file:'',
       },
       form2:{
           password:'',
@@ -132,12 +135,18 @@ export default {
     countDownChanged (dismissCountDown) {
       this.dismissCountDown = dismissCountDown
     },
+    
     onSubmit (evt) {
         evt.preventDefault();
         const id =  parseInt(sessionStorage.getItem('idUser')) - 1
         const pseudo = this.form.pseudo
         const mail = this.form.mail
-        const avatar = this.form.avatar
+        if(!empty(file)){
+          const avatar = this.form.file
+        }else{
+          const avatar = this.form.avatar
+        }
+        
         fb.db.ref('user/' + id).update({
             avatar: avatar,
             mail: mail,

@@ -5,6 +5,8 @@ import Connexion from '@/components/connexion/Connexion'
 import Inscription from '@/components/inscription/Inscription'
 import Partie from '@/components/partie/Partie'
 import Informations from '@/components/informations/Informations'
+import Nouvellepartie from '@/components/nouvellepartie/Nouvellepartie'
+import Contactjoueur from '@/components/contactjoueur/Contactjoueur'
 
 Vue.use(Router)
 
@@ -34,6 +36,16 @@ export default new Router({
       path: '/informations',
       name: 'Informations',
        component: Informations
+    },
+    {
+      path: '/nouvellepartie',
+      name: 'Nouvellepartie',
+       component: Nouvellepartie
+    },
+    {
+      path: '/contactjoueur',
+      name: 'Contactjoueur',
+       component: Contactjoueur
     }
   ]
 })

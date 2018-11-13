@@ -7,14 +7,14 @@
             </router-link>
         </li>
         <li>
-            <a href="#">
+            <router-link to="/nouvellepartie">
                 <i class="fa fa-gamepad"></i> <span>Nouvelle partie</span>
-            </a>
+            </router-link>
         </li>
         <li>
-            <a href="#">
+            <router-link to="/contactjoueur">
                 <i class="fa fa-users"></i> <span>Contact</span>
-            </a>
+            </router-link>
         </li>
         <li>
             <router-link to="/informations">
